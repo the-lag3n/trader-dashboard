@@ -52,9 +52,9 @@ let update = (ticker) => {
       document.getElementById('percentPNL').style = "font-size:16px;"
     }
   })
-  // .catch(error => {
-  //   console.log('Error fetching stock price:', error);
-  // });
+  .catch(error => {
+    console.log('Error fetching stock price:', error);
+  });
 }
 
 let sleep = (s) => {
@@ -71,7 +71,6 @@ async function market_listener (tickers) {
   while ((time.getUTCDay() >= 1 && time.getUTCDay() <= 5) && ((time.getUTCHours() >= 14 || time.getUTCHours() <= 19 || (time.getUTCHours() == 13 && time.getUTCMinutes() >= 30)))){
     for(let k = 0; k < tickers.length; k++){
       update(tickers[k])
-      key_index += 1
     }
     await sleep(10)
     console.log('execute')
