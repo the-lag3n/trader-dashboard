@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="index.css" />
+        <link rel="icon" href="icon.png">
+        <script src="script.js"></script>
+        <script src="stocks.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <p id="date">
+                <span id="day"></span>
+                <span id="dot">&middot</span>
+                <span id="month"></span>
+                <span id="slash">/</span>
+                <span id="num-date"></span>
+            </p>
+            <div class="clock-container">
+                <div class="clock"></div>
+            </div>
+            <p id="greeting">Good <span id="timeframe"></span>, Eric</p>
+            <p style="font-size:25px">Your Portfolio</p>
+            <p style="font-size:16px; margin-top:0.5em">Daily PNL ($): <strong id="dollarPNL" style="font-size:16px">0.00</strong></p>
+            <p style="font-size:16px; margin-top:0.5em">Daily PNL (%): <strong id="percentPNL" style="font-size:16px">0.00%</strong></p>
+            <strong style="font-size:16px; margin-top:0.5em; margin-bottom:0.75em">Portfolio Value ($): <strong id="portfolio" style="font-size:16px">0.00</strong></strong>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Ticker</th>
+                  <th class="text-right">Quantity</th>
+                  <th class="text-right">Last Close</th>
+                  <th class="text-right">Current Price</th>
+                  <th class="text-right ploss">PNL (%)</th>
+                  <th class="text-right ploss">PNL ($)</th>
+                </tr>
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>            
+        </div>
+          
+    </body>
+</html>
