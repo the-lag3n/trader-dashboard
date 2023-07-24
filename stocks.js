@@ -1,5 +1,7 @@
 let update = (ticker) => {
-  fetch(`https://query2.finance.yahoo.com/v7/finance/options/${ticker}`)
+  fetch(`https://thingproxy.freeboard.io/fetch/https://query2.finance.yahoo.com/v7/finance/options/${ticker}`)
+  // fetch(`http://localhost:3000/${ticker}`) //[*]
+  // fetch(`https://query2.finance.yahoo.com/v7/finance/options/${ticker}`)
   .then(response => response.json())
   .then(data => {
     data = data['optionChain']['result'][0]['quote']
