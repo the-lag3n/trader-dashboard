@@ -1,5 +1,6 @@
 let update = (ticker) => {
-  fetch(`https://thingproxy.freeboard.io/fetch/https://query2.finance.yahoo.com/v7/finance/options/${ticker}`)
+  // Free web service hosting on Render, https://dashboard.render.com/web/srv-ciusfmp5rnuhcnvgklog
+  fetch(`https://no-cors-server.onrender.com/${ticker}`)
   // fetch(`http://localhost:3000/${ticker}`) //[*]
   // fetch(`https://query2.finance.yahoo.com/v7/finance/options/${ticker}`)
   .then(response => response.json())
