@@ -19,14 +19,14 @@ let update = (ticker) => {
     document.getElementById(`${ticker}-pnlpct`).innerText = change_percent.toFixed(2) + '%'
     document.getElementById(`${ticker}-pnldol`).innerText = (change * parseFloat(document.getElementById(`${ticker}-quant`).innerText)).toFixed(2)
     if (change > 0){
-      document.getElementById(`${ticker}-pnlpct`).style = 'color:green'
-      document.getElementById(`${ticker}-pnldol`).style = 'color:green'
+      document.getElementById(`${ticker}-pnlpct`).style = 'width:17%;color:green'
+      document.getElementById(`${ticker}-pnldol`).style = 'width:17%;color:green'
     } else if (change < 0){
-      document.getElementById(`${ticker}-pnlpct`).style = 'color:red'
-      document.getElementById(`${ticker}-pnldol`).style = 'color:red'
+      document.getElementById(`${ticker}-pnlpct`).style = 'width:17%;color:red'
+      document.getElementById(`${ticker}-pnldol`).style = 'width:17%;color:red'
     } else {
-      document.getElementById(`${ticker}-pnlpct`).style = ''
-      document.getElementById(`${ticker}-pnldol`).style = ''
+      document.getElementById(`${ticker}-pnlpct`).style = 'width:17%'
+      document.getElementById(`${ticker}-pnldol`).style = 'width:17%'
     }
 
     let pnls = document.getElementsByClassName('pnl')
@@ -117,31 +117,37 @@ window.addEventListener('load', () => {
       let inner = document.createElement('strong')
       inner.innerText = tick
       ticker.appendChild(inner)
+      ticker.style = 'width:16%'
 
       let quant = document.createElement('td')
       quant.className = 'text-right quantity'
       quant.id = `${tick}-quant`
       quant.innerText = data[i].c[1].v
+      quant.style = 'width:16%'
 
       let open = document.createElement('td')
       open.className = 'text-right open'
       open.id = `${tick}-open`
       open.innerText = '0'
+      open.style = 'width:17%'
 
       let last = document.createElement('td')
       last.className = 'text-right last'
       last.id = `${tick}-last`
       last.innerText = '0'
+      last.style = 'width:17%'
 
       let pnlpct = document.createElement('td')
       pnlpct.className = 'text-right'
       pnlpct.id = `${tick}-pnlpct`
       pnlpct.innerText = '0'
+      pnlpct.style = 'width:17%'
 
       let pnldol = document.createElement('td')
       pnldol.className = 'text-right pnl'
       pnldol.id = `${tick}-pnldol`
       pnldol.innerText = '0'
+      pnldol.style = 'width:17%'
 
       row.appendChild(ticker)
       row.appendChild(quant)
